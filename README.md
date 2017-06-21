@@ -1,4 +1,4 @@
-# grunt-dependent-styles
+# grunt-dependent-styles [![Build Status](https://travis-ci.org/VitaliyR/grunt-dependent-styles.svg?branch=master)](https://travis-ci.org/VitaliyR/grunt-dependent-styles)
 
 > Get all nested imported files from passed SCSS
 
