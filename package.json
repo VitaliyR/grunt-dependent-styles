@@ -1,0 +1,50 @@
+{
+  "name": "grunt-dependent-styles",
+  "pluginName": "dependentStyles",
+  "version": "0.0.1",
+  "description": "Get all nested imported files from passed SCSS",
+  "files": [
+    "tasks",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "grunt test"
+  },
+  "engines": {
+    "node": ">= 0.12.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vitaliyr/grunt-dependent-styles.git"
+  },
+  "keywords": [
+    "grunt",
+    "grunt-plugin",
+    "css",
+    "dependent",
+    "styles"
+  ],
+  "author": "Vitaliy Ribachenko <vit@ribachenko.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vitaliyr/grunt-dependent-styles/issues"
+  },
+  "homepage": "https://github.com/vitaliyr/grunt-dependent-styles#readme",
+  "dependencies": {
+    "sass-graph": "^2.0.1"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-jshint": "^1.0.0",
+    "grunt-contrib-nodeunit": "^1.0.0",
+    "load-grunt-tasks": "^3.1.0",
+    "time-grunt": "^1.1.0",
+    "eslint": "3.19.x",
+    "eslint-config-airbnb-base": "11.2.x",
+    "eslint-plugin-import": "2.3.x",
+    "grunt-eslint": "^19.0.0"
+  },
+  "peerDependencies": {
+    "grunt": ">=0.4.5"
+  }
+}
