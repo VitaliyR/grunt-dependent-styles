@@ -23,6 +23,12 @@ module.exports = function GruntFile(grunt) {
           namespace: 'test'
         },
         src: ['test/fixtures/root.scss']
+      },
+      filterResultsForDuplicates: {
+        options: {
+          namespace: 'filter'
+        },
+        src: ['test/fixtures/root.scss', 'test/fixtures/secondRoot.scss']
       }
     },
 

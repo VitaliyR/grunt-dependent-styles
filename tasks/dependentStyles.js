@@ -22,9 +22,7 @@ module.exports = function dependentStylesExports(grunt) {
       }, this);
     }, this);
 
-    return files.filter(function filterFile(item, pos, self) {
-      return self.indexOf(item) === pos;
-    });
+    return files
   }
 
   grunt.registerMultiTask(pkg.pluginName, pkg.description, function dependentStyles() {
@@ -42,6 +40,10 @@ module.exports = function dependentStylesExports(grunt) {
           return result.concat(getDependentStyles(filePath, options.styleOpts));
         }, [])
       );
+    });
+
+    dependentFiles = dependentFiles.filter(function filterFiles(item, pos, self) {
+      return self.indexOf(item) === pos;
     });
 
     var configKey = [pkg.pluginName, 'result']

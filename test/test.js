@@ -23,16 +23,21 @@ var grunt = require('grunt');
 exports.gruntDependentStyles = {
   defaultOpts: function (test) {
     var files = grunt.config('dependentStyles.result');
-
     test.equal(files.length, 3, 'Should be 3 files in total');
 
     test.done();
   },
-  useNamespace: function (test) {
-    test.expect(1);
 
-    var correctFiles = grunt.config('dependentStyles.result.test');
-    test.equal(correctFiles.length, 3, 'Should be 3 files in total');
+  useNamespace: function (test) {
+    var files = grunt.config('dependentStyles.result.test');
+    test.equal(files.length, 3, 'Should be 3 files in total');
+
+    test.done();
+  },
+
+  filterResultsForDuplicate: function (test) {
+    var files = grunt.config('dependentStyles.result.filter');
+    test.equal(files.length, 4, 'Should be 3 files in total');
 
     test.done();
   }
