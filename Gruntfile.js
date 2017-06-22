@@ -45,7 +45,7 @@ module.exports = function GruntFile(grunt) {
   grunt.loadNpmTasks('grunt-eslint');
   grunt.loadNpmTasks('grunt-contrib-nodeunit');
 
-  grunt.registerTask('test', ['eslint', 'dependentStyles', 'nodeunit']);
+  grunt.registerTask('test', ['dependentStyles', 'nodeunit']);
 
   // By default, lint and run all tests.
   grunt.registerTask('default', ['eslint', 'test']);

@@ -1,5 +1,6 @@
 var scssGraph = require('sass-graph');
 var pkg = require('../package.json');
+var path = require('path');
 
 module.exports = function dependentStylesExports(grunt) {
   /**
@@ -28,6 +29,7 @@ module.exports = function dependentStylesExports(grunt) {
   grunt.registerMultiTask(pkg.pluginName, pkg.description, function dependentStyles() {
     var options = this.options({
       namespace: grunt.task.current.target,
+      skipPartials: true,
       styleOpts: {}
     });
 
@@ -37,7 +39,8 @@ module.exports = function dependentStylesExports(grunt) {
       Array.prototype.push.apply(
         dependentFiles,
         file.src.reduce(function reduceSrc(result, filePath) {
-          return result.concat(getDependentStyles(filePath, options.styleOpts));
+          var baseName = path.basename(filePath);
+          return baseName[0] !== '_' ? result.concat(getDependentStyles(filePath, options.styleOpts)) : result;
         }, [])
       );
     });

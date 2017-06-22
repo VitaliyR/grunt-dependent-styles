@@ -71,6 +71,12 @@ Default value: `name of the task (target)`
 
 Dependent styles result object namespace.
 
+#### options.skipPartials
+Type: `Boolean`
+Default value: `true`
+
+Skip styles which name starts with leading underscore.
+
 #### options.styleOpts
 Type: `Object`
 Default value: `{}`

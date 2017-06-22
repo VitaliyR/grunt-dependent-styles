@@ -8,7 +8,7 @@
     "LICENSE"
   ],
   "scripts": {
-    "test": "grunt test"
+    "test": "grunt"
   },
   "engines": {
     "node": ">= 0.12.0"
