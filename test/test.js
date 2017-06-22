@@ -22,7 +22,7 @@ var grunt = require('grunt');
 
 exports.gruntDependentStyles = {
   defaultOpts: function (test) {
-    var files = grunt.config('dependentStyles.result');
+    var files = grunt.config('dependentStyles.result.defaultOpts');
     test.equal(files.length, 3, 'Should be 3 files in total');
 
     test.done();
@@ -38,6 +38,13 @@ exports.gruntDependentStyles = {
   filterResultsForDuplicate: function (test) {
     var files = grunt.config('dependentStyles.result.filter');
     test.equal(files.length, 4, 'Should be 3 files in total');
+
+    test.done();
+  },
+
+  useDefaultNamespace: function (test) {
+    var files = grunt.config('dependentStyles.result.useDefaultNamespace');
+    test.equal(files.length, 3);
 
     test.done();
   }

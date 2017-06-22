@@ -29,6 +29,9 @@ module.exports = function GruntFile(grunt) {
           namespace: 'filter'
         },
         src: ['test/fixtures/root.scss', 'test/fixtures/secondRoot.scss']
+      },
+      useDefaultNamespace: {
+        src: ['test/fixtures/root.scss']
       }
     },
 
@@ -42,7 +45,7 @@ module.exports = function GruntFile(grunt) {
   grunt.loadNpmTasks('grunt-eslint');
   grunt.loadNpmTasks('grunt-contrib-nodeunit');
 
-  grunt.registerTask('test', ['dependentStyles', 'nodeunit']);
+  grunt.registerTask('test', ['eslint', 'dependentStyles', 'nodeunit']);
 
   // By default, lint and run all tests.
   grunt.registerTask('default', ['eslint', 'test']);

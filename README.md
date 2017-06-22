@@ -29,17 +29,28 @@ Useful, when you need to
 ```js
 grunt.initConfig({
   dependentStyles: {
-    options: {
-      namespace: 'targetStyles'
+    all: {
+      options: {
+        namespace: 'custom' // provide custom namespace        
+      },
+      src: './**/*.scss'
     },
     your_target: {
-      src: './target.scss'
+      src: './target.scss' // here will be default namespace called the same like task - your_target
     }
   },
   
   postcss: {
+    all: {
+      src: ['<%= dependentStyles.result.all %>'],
+      options: {
+        processors: [
+          stylelint()
+        ]
+      } 
+    },
     your_target: {
-      src: ['<%= dependentStyles.result.targetStyles %>'],
+      src: ['<%= dependentStyles.result.your_target %>'],
       options: {
         processors: [
           stylelint()
@@ -56,7 +67,7 @@ grunt.registerTask('css', ['dependentStyles:your_target', 'postcss:your_target']
 
 #### options.namespace
 Type: `String`
-Default value: `null`
+Default value: `name of the task (target)`
 
 Dependent styles result object namespace.
 

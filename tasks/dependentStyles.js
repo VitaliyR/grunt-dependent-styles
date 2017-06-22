@@ -22,12 +22,12 @@ module.exports = function dependentStylesExports(grunt) {
       }, this);
     }, this);
 
-    return files
+    return files;
   }
 
   grunt.registerMultiTask(pkg.pluginName, pkg.description, function dependentStyles() {
     var options = this.options({
-      namespace: null,
+      namespace: grunt.task.current.target,
       styleOpts: {}
     });
 
